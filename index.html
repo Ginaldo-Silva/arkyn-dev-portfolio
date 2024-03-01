@@ -3,29 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Arkyn Dev</title>
     
     <link rel="stylesheet" href="styles/styles.css">
+    <script defer src="script.js"></script>
+    <script src="modulo.js" type="module"></script>
+
 </head>
 <body>
-    <main>
-        <section>
-            <header>
-                <div id="dev-logo">
-        
-                </div>
-
-                <div>
-                    <nav>
-                        <ul>
-                            <li>Inicio</li>
-                            <li>Habilidades</li>
-                        </ul>
-                    </nav>
-                    <button id="cv-button">CV Digital</button>
-                </div>
-            </header>
-        </section>
+    <header>
+        <div id="dev-logo">
+        </div>
+        <div>
+            <nav id="nav" class="nav-closed">
+                <ul>
+                    <li>
+                        <a class="link" href="/#">Início</a>
+                    </li>
+                    <li>
+                        <a class="link" href="/#habilidades">Habilidades</a>
+                    </li>
+                    <li>
+                        <a class="link" href="/#contatos">Projetos</a>
+                    </li>
+                </ul>
+            </nav>
+            <button id="contact_button">Contato</button>
+            <label id="buttons__burger" for="burger">
+                <input type="checkbox" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+        </div>
+    </header>
+    <main id="root">
     </main>
+    <footer>
+        <p>@ginaldosilva_18</p>
+    </footer>
 </body>
 </html>
