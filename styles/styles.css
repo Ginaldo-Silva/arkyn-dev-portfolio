@@ -119,33 +119,75 @@ section {
 }
 
 #home_section {
+  flex-direction: column;
   padding: 60px 64px 0px 64px;
 }
-#home_section div {
+#home_section #home_first {
+  display: flex;
+  justify-content: flex-end;
+  height: 20px;
+  width: 100%;
+}
+#home_section #home_second {
+  display: flex;
+  align-items: center;
   flex: 1;
 }
-#home_section div h1 {
-  font-size: 3em;
+#home_section #home_second div {
+  flex: 1;
 }
-#home_section div h1 span {
-  color: #9f00ff;
-}
-#home_section div p {
-  padding-left: 46px;
-}
-#home_section div:first-child {
+#home_section #home_second div #title {
+  position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  width: 250px;
+}
+#home_section #home_second div #title h1 {
+  text-align: center;
+  font-size: 3em;
+}
+#home_section #home_second div #title h1 span {
+  color: #9f00ff;
+}
+#home_section #home_second div #title h2 {
+  text-align: end;
+  font-size: 1em;
 }
 
+#skils_section {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 12px;
+}
+#skils_section #sobre {
+  height: 65%;
+  border-top-right-radius: 12px;
+  border-top-left-radius: 12px;
+  background-color: #9f00ff;
+}
 #skils_section #skils {
-  display: grid;
-  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 35%;
   gap: 12px;
   align-items: center;
-  justify-content: center;
   align-content: center;
+}
+#skils_section #skils #bg_skils {
+  width: 100%;
+  height: 45%;
+  background-color: #9f00ff;
+}
+#skils_section #skils #skils_container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: auto;
+  gap: 64px;
+  width: 100%;
+  height: 35%;
 }
 
 .skil_card {
@@ -155,6 +197,7 @@ section {
   justify-content: space-between;
   gap: 8px;
   padding: 5px 0px;
+  z-index: 2;
 }
 .skil_card div {
   display: flex;
@@ -337,6 +380,51 @@ a {
 }
 #scroll-up:hover {
   transform: translateY(-0.25rem);
+}
+
+#theme-checkbox {
+  --toggle-size: 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 4.25em;
+  height: 2.1em;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
+  background: -o-linear-gradient(left, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background-size: 205%;
+  background-position: 0;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 99em;
+  position: relative;
+  cursor: pointer;
+  font-size: var(--toggle-size);
+}
+#theme-checkbox::before {
+  content: "";
+  width: 1.25em;
+  height: 1.25em;
+  position: absolute;
+  top: 0.438em;
+  left: 0.438em;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #efefef), color-stop(50%, #2a2a2a)) no-repeat;
+  background: -o-linear-gradient(left, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background: linear-gradient(to right, #efefef 50%, #2a2a2a 50%) no-repeat;
+  background-size: 205%;
+  background-position: 100%;
+  border-radius: 50%;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+#theme-checkbox:checked::before {
+  left: calc(100% - 2.25em - 0.438em);
+  background-position: 0;
+}
+#theme-checkbox:checked {
+  background-position: 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */
