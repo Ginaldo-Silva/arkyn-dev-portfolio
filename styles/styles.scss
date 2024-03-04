@@ -26,6 +26,7 @@ header {
     height: 60px;
     width: 100%;
     padding: 12px 24px;
+    z-index: 2;
 
     #dev-logo {
         width: 50px;
@@ -75,18 +76,64 @@ header {
 main {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
+    flex-wrap: nowrap;
+    height: 100vh;
     width: 100%;
 }
 
 section {
+    display: flex;
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
 }
 
-.first_section { padding-top: 60px; }
+#first_section { padding-top: 60px; }
+
+#skils_section {
+    div {
+        flex: 1;
+    }
+}
+
+.skil_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 5px 0px;
+
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 75px;
+        height: 75px;
+        border: 1px solid #cccc;
+        border-radius: 12px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+        transition: border 0.5s ease;
+
+        img {
+            width: 75%;
+            height: 75%;
+        }
+    
+        &:hover {
+            border: 1px solid $primaryColor;
+        }
+
+        p {
+            font-weight: bold;
+        }
+    }
+}
+
+footer {
+    bottom: 0;
+    width: 100%;
+    padding: 24px;
+}
 
 button { cursor: pointer; }
 
@@ -150,28 +197,6 @@ button { cursor: pointer; }
         &:hover::before {
             width: 100%;
         }
-    }
-}
-
-.active {
-    position: relative;
-    font-size: 1.3em;
-    display: flex;
-    align-items: center;
-    list-style: none;
-    color: black;
-    padding: 5px 10px;
-    height: 30px;
-
-    &::before {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100% !important;
-        height: 3px;
-        background-color: $primaryColor;
-        transition: width 0.5s ease;
     }
 }
 
