@@ -4,6 +4,7 @@
 $primaryFont: 'Inter', "Roboto", Verdana, sans-serif;
 $secondaryFont: 'Madimi', Verdana, sans-serif;
 $primaryColor: #9f00ff;
+$primaryColorLigth: #C566FF;
 
 * {
     margin: 0;
@@ -16,6 +17,7 @@ body, html {
     height: 100vh;
     background-color: white;
     font-family: $primaryFont;
+    scroll-behavior: smooth;
 }
 
 header {
@@ -25,7 +27,7 @@ header {
     justify-content: space-between;
     height: 60px;
     width: 100%;
-    padding: 12px 24px;
+    padding: 24px;
     z-index: 2;
 
     #dev-logo {
@@ -48,7 +50,6 @@ header {
                     list-style: none;
 
                     a {
-                        text-decoration: none;
                         font-size: 1.2em;
                         color: black;
 
@@ -59,16 +60,63 @@ header {
                 }
             }
         }
+    }
+}
 
-        button {
-            height: 35px;
-            width: 100px;
-            border: none;
-            border-radius: 8px;
-            background-color: $primaryColor;
-            font-size: 1em;
-            color: white;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+#contact_button {
+    position: relative;
+    margin: auto;
+    padding: 12px 18px;
+    transition: all 0.2s ease;
+    border: none;
+    background: none;
+    cursor: pointer;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        border-radius: 50px;
+        background: $primaryColorLigth;
+        width: 45px;
+        height: 45px;
+        transition: all 0.3s ease;
+    }
+
+    &:hover::before {
+        width: 100%;
+        background: $primaryColorLigth;
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+
+    span {
+        position: relative;
+        font-family: "Ubuntu", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        color: #234567;
+    }
+
+    svg {
+        position: relative;
+        top: 0;
+        margin-left: 10px;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke: #234567;
+        stroke-width: 2;
+        transform: translateX(-5px);
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateX(0)
         }
     }
 }
@@ -85,13 +133,44 @@ section {
     display: flex;
     width: 100%;
     min-height: 100vh;
+    scroll-behavior: smooth;
 }
 
-#first_section { padding-top: 60px; }
+#home_section { 
+    padding: 60px 64px 0px 64px;
 
-#skils_section {
     div {
         flex: 1;
+
+        h1 {
+            font-size: 3em;
+            span {
+                color: $primaryColor;
+            }
+        }
+
+        p {
+            padding-left: 46px;
+        }
+    }
+
+    div:first-child {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+#skils_section {
+    
+
+    #skils {
+        display: grid;
+        flex: 1;
+        gap: 12px;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
     }
 }
 
@@ -107,12 +186,13 @@ section {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 75px;
-        height: 75px;
+        width: 85px !important;
+        height: 85px !important;
         border: 1px solid #cccc;
         border-radius: 12px;
         box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
         transition: border 0.5s ease;
+        padding: 4px;
 
         img {
             width: 75%;
@@ -120,13 +200,23 @@ section {
         }
     
         &:hover {
-            border: 1px solid $primaryColor;
-        }
-
-        p {
-            font-weight: bold;
+            border: 4px dashed $primaryColor;
         }
     }
+
+    p {
+        text-align: center;
+    }
+}
+
+#html {
+    background: rgb(252,117,75);
+    background: linear-gradient(45deg, rgba(252,117,75,1) 0%, rgba(255,87,34,1) 100%);
+}
+
+#css  {
+    background: rgb(65,170,254);
+    background: linear-gradient(45deg, rgba(65,170,254,1) 0%, rgba(33,150,243,1) 100%);
 }
 
 footer {
@@ -136,6 +226,7 @@ footer {
 }
 
 button { cursor: pointer; }
+a { text-decoration: none; }
 
 @media screen and (max-width:768px) {
     #buttons__burger { display: block; }
@@ -253,4 +344,24 @@ button { cursor: pointer; }
         width: 50%;
         top: 50%;
     }
+}
+
+#scroll-up {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background-color: $primaryColor;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 50%;
+    bottom: 24px;
+    right: 24px;
+    overflow: hidden;
+    transition: bottom .4s, transform .4s;
+
+    &:hover {
+        transform: translateY(-.25rem);
     }
+}

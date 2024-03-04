@@ -7,6 +7,7 @@
     
     <link rel="stylesheet" href="styles/styles.css">
     <script defer src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
 
 </head>
 <body>
@@ -17,17 +18,23 @@
             <nav id="nav" class="nav-closed">
                 <ul>
                     <li>
-                        <a class="link" href="/#">Início</a>
+                        <a class="link" href="#home_section">Início</a>
                     </li>
                     <li>
-                        <a class="link" href="/#skils_section">Habilidades</a>
+                        <a class="link" href="#skils_section">Habilidades</a>
                     </li>
                     <li>
-                        <a class="link" href="/#contatos">Projetos</a>
+                        <a class="link" href="#contatos">Projetos</a>
                     </li>
                 </ul>
             </nav>
-            <button id="contact_button">Contato</button>
+            <button id="contact_button">
+                <span>Contato</span>
+                <svg width="15px" height="10px" viewBox="0 0 13 10">
+                    <path d="M1,5 L11,5"></path>
+                    <polyline points="8 1 12 5 8 9"></polyline>
+                </svg>
+            </button>
             <label id="buttons__burger" for="burger">
                 <input type="checkbox" id="burger">
                 <span></span>
@@ -37,20 +44,39 @@
         </div>
     </header>
     <main id="root">
-        <section id="first_section">
+        <section id="home_section">
+            <div>
+                <h1>Arkyn <span>Dev</span></h1>
+                <p>Desenvolvedor Front-End</p>
+            </div>
+            <div>
 
+            </div>
         </section>
         <section id="skils_section">
             <div></div>
-            <div>
+            <div id="skils">
                 <div class="skil_card">
-                    <div>
-                        <img src="img/skils/html_1051277.png" alt="html-skil">
+                    <div id="html">
+                        <img src="img/skils/HTML5.png" alt="html-skil">
                     </div>
                     <p>HTML5</p>
                 </div>
+                <div class="skil_card">
+                    <div id="css">
+                        <img src="img/skils/CSS3.png" alt="css-skil">
+                    </div>
+                    <p>CSS3</p>
+                </div>
             </div>
         </section>
+        <a id="scroll-up" href="#">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 0h24v24H0z" fill="none"></path>
+                <path fill="rgba(255,255,255,1)" d="M11.9997 10.8284L7.04996 15.7782L5.63574 14.364L11.9997 8L18.3637 14.364L16.9495 15.7782L11.9997 10.8284Z">
+                </path>
+            </svg>
+        </a>
     </main>
 </body>
 </html>

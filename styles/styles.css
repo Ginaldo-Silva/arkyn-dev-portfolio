@@ -11,6 +11,7 @@ body, html {
   height: 100vh;
   background-color: white;
   font-family: "Inter", "Roboto", Verdana, sans-serif;
+  scroll-behavior: smooth;
 }
 
 header {
@@ -20,7 +21,7 @@ header {
   justify-content: space-between;
   height: 60px;
   width: 100%;
-  padding: 12px 24px;
+  padding: 24px;
   z-index: 2;
 }
 header #dev-logo {
@@ -43,22 +44,63 @@ header div nav ul li {
   list-style: none;
 }
 header div nav ul li a {
-  text-decoration: none;
   font-size: 1.2em;
   color: black;
 }
 header div nav ul li a:hover {
   font-weight: bold;
 }
-header div button {
-  height: 35px;
-  width: 100px;
+
+#contact_button {
+  position: relative;
+  margin: auto;
+  padding: 12px 18px;
+  transition: all 0.2s ease;
   border: none;
-  border-radius: 8px;
-  background-color: #9f00ff;
-  font-size: 1em;
-  color: white;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  background: none;
+  cursor: pointer;
+}
+#contact_button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  border-radius: 50px;
+  background: #C566FF;
+  width: 45px;
+  height: 45px;
+  transition: all 0.3s ease;
+}
+#contact_button:hover::before {
+  width: 100%;
+  background: #C566FF;
+}
+#contact_button:active {
+  transform: scale(0.95);
+}
+#contact_button span {
+  position: relative;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: #234567;
+}
+#contact_button svg {
+  position: relative;
+  top: 0;
+  margin-left: 10px;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke: #234567;
+  stroke-width: 2;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+#contact_button svg:hover {
+  transform: translateX(0);
 }
 
 main {
@@ -73,14 +115,37 @@ section {
   display: flex;
   width: 100%;
   min-height: 100vh;
+  scroll-behavior: smooth;
 }
 
-#first_section {
-  padding-top: 60px;
+#home_section {
+  padding: 60px 64px 0px 64px;
 }
-
-#skils_section div {
+#home_section div {
   flex: 1;
+}
+#home_section div h1 {
+  font-size: 3em;
+}
+#home_section div h1 span {
+  color: #9f00ff;
+}
+#home_section div p {
+  padding-left: 46px;
+}
+#home_section div:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#skils_section #skils {
+  display: grid;
+  flex: 1;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
 }
 
 .skil_card {
@@ -95,22 +160,33 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 75px;
-  height: 75px;
+  width: 85px !important;
+  height: 85px !important;
   border: 1px solid rgba(204, 204, 204, 0.8);
   border-radius: 12px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
   transition: border 0.5s ease;
+  padding: 4px;
 }
 .skil_card div img {
   width: 75%;
   height: 75%;
 }
 .skil_card div:hover {
-  border: 1px solid #9f00ff;
+  border: 4px dashed #9f00ff;
 }
-.skil_card div p {
-  font-weight: bold;
+.skil_card p {
+  text-align: center;
+}
+
+#html {
+  background: rgb(252, 117, 75);
+  background: linear-gradient(45deg, rgb(252, 117, 75) 0%, rgb(255, 87, 34) 100%);
+}
+
+#css {
+  background: rgb(65, 170, 254);
+  background: linear-gradient(45deg, rgb(65, 170, 254) 0%, rgb(33, 150, 243) 100%);
 }
 
 footer {
@@ -121,6 +197,10 @@ footer {
 
 button {
   cursor: pointer;
+}
+
+a {
+  text-decoration: none;
 }
 
 @media screen and (max-width: 768px) {
@@ -238,6 +318,25 @@ button {
   transform: translateY(-70%) rotate(-40deg);
   width: 50%;
   top: 50%;
+}
+
+#scroll-up {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background-color: #9f00ff;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 50%;
+  bottom: 24px;
+  right: 24px;
+  overflow: hidden;
+  transition: bottom 0.4s, transform 0.4s;
+}
+#scroll-up:hover {
+  transform: translateY(-0.25rem);
 }
 
 /*# sourceMappingURL=styles.css.map */
